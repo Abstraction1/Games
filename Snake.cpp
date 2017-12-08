@@ -8,18 +8,18 @@
 #include <time.h>
 using namespace std;
 // Prototypes
-void clear(int a); // скорость игры,  а - параметр скорости
+void clear(int a); 
 void clone_snake_to_field(int mas[20][40], int mas1[20][40], int h, int w);
-void setcur(int x, int y);//установка курсора на позицию  x y (Убирает мерцание консоли)
+void setcur(int x, int y);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ  x y (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 void field_snake(int mas[20][40],  int h, int w );
 void field_draw(int mas[20][40],  int h, int w, int  c);
 void bug_food(int mas[20][40], int h, int w, int c);
 char game_over();
 // Global data
-int snake_i = 10;// координаты головы змеи змеи
+int snake_i = 10;// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 int snake_j = 10; 
-int n_len = 5; //начальная длина змеи
-int f=15; //начальные координаты еды
+int n_len = 5; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+int f=15; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 int g=15;
 int score = 0;
 int main()
@@ -60,7 +60,7 @@ do {
 	}
 	system("CLS");
 	system("color 1a");
-	for (int i = 10; i > n_len; --i) { my_snake_j.push(i); my_snake_i.push(10); } // начальная позиция змеи.
+	for (int i = 10; i > n_len; --i) { my_snake_j.push(i); my_snake_i.push(10); } // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.
 	while (move != 'q')
 	{
 		if (_kbhit()) {
@@ -85,22 +85,22 @@ do {
 			snake_j++;
 			break;
 		}
-		if (snake_mass[snake_i][snake_j] == 174) break;//если змея себя укусила - выход	
+		if (snake_mass[snake_i][snake_j] == 174) break;//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅ	
 		if (snake_i == 0) { snake_i = a - 2; }
 		else if (snake_i == a - 1) { snake_i = 1; }
-		else as = snake_i; my_snake_i.push(as);//проверка на выход за пределы массива
+		else as = snake_i; my_snake_i.push(as);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (snake_j == 0) { snake_j = b - 2; }
 		else if (snake_j == b - 1) { snake_j = 1; }
-		else bs = snake_j; my_snake_j.push(bs);//проверка на выход за пределы массива
+		else bs = snake_j; my_snake_j.push(bs);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-		field_snake(mass, a, b); // обнуляем основное поле
-		field_snake(snake_mass, a, b); // обнуляем поле для змеи
+		field_snake(mass, a, b); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+		field_snake(snake_mass, a, b); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 		if (place)snake_mass[f][g] = 35;
-		for (int i = 0; i < n_len; ++i) // выводим координаты змеи
+		for (int i = 0; i < n_len; ++i) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 		{
 			if (snake_mass[my_snake_i.top()][my_snake_j.top()] == 35) 
 				bug_food(snake_mass, a, b, speed); 
-			if (i == 0)snake_mass[my_snake_i.top()][my_snake_j.top()] = 31;  //символ для головы змеи
+			if (i == 0)snake_mass[my_snake_i.top()][my_snake_j.top()] = 31;  //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 			else snake_mass[my_snake_i.top()][my_snake_j.top()] = 174;
 			rev_snake_i.push(my_snake_i.top());
 			rev_snake_j.push(my_snake_j.top());
@@ -114,10 +114,10 @@ do {
 			rev_snake_i.pop();
 			rev_snake_j.pop();
 		}
-		clone_snake_to_field(mass, snake_mass, a, b); // налаживаем поле для змеи на основное поле
+		clone_snake_to_field(mass, snake_mass, a, b); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 		field_draw(mass, a, b, speed_one);
-		clear(speed); // обновляем поле		
+		clear(speed); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ		
 	}
 	move_ex=game_over();
 } while (move_ex != 'q');
@@ -165,7 +165,7 @@ void bug_food(int mas[20][40], int h, int w, int c )
 	n_len++;
 	score +=50 ;
 }
-void setcur(int x, int y)//установка курсора на позицию  x y 
+void setcur(int x, int y)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ  x y 
 {
 	COORD coord;
 	coord.X = x;
