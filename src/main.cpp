@@ -1,7 +1,20 @@
-#include <iostream>
-
+//	default
+/* --------------------------------------------------------------------------*/
+/**
+ * @Synopsis   										Game Start 
+ *
+ * @Returns											Exit Success   
+ */
+/* --------------------------------------------------------------------------*/
 int main()
-{
-	std::cout << "Hello!!";
+{	
 	return 0;
 }
+/**
+ * @file main.cpp
+ * @Synopsis  
+ * @author default
+ * @version default
+ * @date 2017-12-21
+ */
+
